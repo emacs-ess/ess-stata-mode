@@ -48,7 +48,7 @@
     ;; asterisk at bol comments taken care of by
     ;; `syntax-propertize-function'.
     (modify-syntax-entry ?*  ". 23b"   tbl)
-    (modify-syntax-entry ?\n ">"  tbl)
+    (modify-syntax-entry ?\n "> b"  tbl)
     (modify-syntax-entry ?+ "." tbl)
     (modify-syntax-entry ?- "." tbl)
     (modify-syntax-entry ?= "." tbl)
