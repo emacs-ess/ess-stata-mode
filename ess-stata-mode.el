@@ -78,7 +78,7 @@
     ;; --more-- is necessary here (hangs otherwise if startup stata.msg is big)
     (inferior-ess-primary-prompt   . "[.:] \\|--more--")
     (inferior-ess-secondary-prompt . ">\\|--more--")
-    (inferior-ess-prompt           . "\\([.:>] \\|--more--\\)")
+    (inferior-ess-prompt           . "\\( *[0-9]*[.:>] \\|--more--\\)")
     (comint-use-prompt-regexp      . t)
     (inferior-ess-search-list-command   . "set more off\n search()\n")
     (ess-execute-screen-options-command . "set linesize %s\n")
