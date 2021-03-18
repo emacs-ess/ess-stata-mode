@@ -157,8 +157,8 @@ This function is placed in `ess-presend-filter-functions'."
       (ess-send-string inf-proc "q")
       (ess-wait-for-process inf-proc t))
     (ess-send-string inf-proc "set more off")
-    (goto-char (point-max))
     (with-current-buffer inf-buf
+      (goto-char (point-max))
       (add-hook 'ess-presend-filter-functions 'ess-sta-remove-comments nil 'local)
       (run-mode-hooks 'ess-stata-post-run-hook))
     inf-buf))
