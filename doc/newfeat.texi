@@ -5,7 +5,7 @@ Changes and New Features:
 
 @item Call @code{goto-char} in the inferior buffer when starting Stata
 (go to end of Stata buffer at start of inferior Stata process;
-@code(goto-char) call was previously misplaced
+@code{goto-char} call was previously misplaced
 
 @item Correct @code{modify-syntax-entry} entry to restore //-style
 comments: comments beginning ``//'' now recognized again
