@@ -35,6 +35,13 @@
 (require 'ess-mode)
 (require 'ess-stata-lang)
 
+(defvar inferior-STA-program
+  "stata"
+  "Program name for invoking an inferior ESS with \\[Stata].")
+
+(defvar inferior-STA-start-args ""
+  "String of arguments used when starting Stata.")
+
 (defvar STA-dialect-name "stata"
   "Name of 'dialect' for Stata.");easily changeable in a user's .emacs
 
