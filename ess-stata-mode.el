@@ -117,7 +117,8 @@
   (setq-local paragraph-ignore-fill-prefix t)
   (setq-local paragraph-separate (concat  "[ \t\f]*$\\|" page-delimiter))
   (setq-local paragraph-start (concat "[ \t\f]*$\\|" page-delimiter))
-  (setq font-lock-defaults '(ess-STA-mode-font-lock-defaults nil nil ((?\. . "w")))))
+  (setq font-lock-defaults '(ess-STA-mode-font-lock-defaults nil nil ((?\. . "w"))))
+  (remove-hook 'ess-idle-timer-functions 'ess-synchronize-dirs 'local))
 
 (defalias 'STA-mode 'ess-stata-mode)
 (defalias 'stata-mode 'ess-stata-mode)
