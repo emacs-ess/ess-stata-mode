@@ -106,6 +106,7 @@
   "Major mode for editing Stata source."
   :group 'ess-Stata
   (ess-setq-vars-local STA-customize-alist)
+  (setq-local ess-eval-visibly nil)
   (setq-local comint-use-prompt-regexp t)
   (setq-local comment-column 40)
   (setq-local comment-end " */")
