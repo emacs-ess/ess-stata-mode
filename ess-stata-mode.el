@@ -35,6 +35,13 @@
 (require 'ess-mode)
 (require 'ess-stata-lang)
 
+(defvar inferior-STA-program
+  "stata"
+  "Program name for invoking an inferior ESS with \\[Stata].")
+
+(defvar inferior-STA-start-args ""
+  "String of arguments used when starting Stata.")
+
 (defvar STA-dialect-name "stata"
   "Name of 'dialect' for Stata.");easily changeable in a user's .emacs
 
@@ -99,6 +106,7 @@
   "Major mode for editing Stata source."
   :group 'ess-Stata
   (ess-setq-vars-local STA-customize-alist)
+  (setq-local ess-eval-visibly nil)
   (setq-local comint-use-prompt-regexp t)
   (setq-local comment-column 40)
   (setq-local comment-end " */")
@@ -110,7 +118,8 @@
   (setq-local paragraph-ignore-fill-prefix t)
   (setq-local paragraph-separate (concat  "[ \t\f]*$\\|" page-delimiter))
   (setq-local paragraph-start (concat "[ \t\f]*$\\|" page-delimiter))
-  (setq font-lock-defaults '(ess-STA-mode-font-lock-defaults nil nil ((?\. . "w")))))
+  (setq font-lock-defaults '(ess-STA-mode-font-lock-defaults nil nil ((?\. . "w"))))
+  (remove-hook 'ess-idle-timer-functions 'ess-synchronize-dirs 'local))
 
 (defalias 'STA-mode 'ess-stata-mode)
 (defalias 'stata-mode 'ess-stata-mode)
